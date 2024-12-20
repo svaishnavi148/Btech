@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>BookMyShow</title>
+    <link rel="icon" type="image/x-icon" href="img/fav.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Citypopup.css">
+    <link rel="stylesheet" href="./footer.css">
+
+    <!-- Javascript -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+
+            <nav class="sidenavbar">
+                <h1>Hey!</h1>
+            </nav>
+
+            <nav class="sidesubnavbar">
+                <img src="img/rewards.webp">
+                <p>Unlock special offers & great benifits</p>
+                <button class="login" onclick="document.getElementById('id01').style.display='block'">Login / Register</button>
+            </nav>
+
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="notifications-outline"></ion-icon>
+                </div>
+                <div class="text">Notifications</div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a class="btn-disabled" href="#">
+                <div class="lefticon">
+                    <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+                <div class="text">Purchase History<br>
+                    <div class="subtext">View all your bookings & Purchases</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </div>
+            </a>
+            <a class="btn-disabled" href="#">
+                <div class="lefticon">
+                    <ion-icon name="tv-outline"></ion-icon>
+                </div>
+                <div class="text">Stream Library<br>
+                    <div class="subtext">Rented & Purchased Movies</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                </div>
+                <div class="text">Help & Support<br>
+                    <div class="subtext">View commonly asked queries and Chat</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a class="btn-disabled" href="#">
+                <div class="lefticon">
+                    <ion-icon name="settings-outline"></ion-icon>
+                </div>
+                <div class="text">Accounts & Settings<br>
+                    <div class="subtext">Location, Payments, Addresses & More</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="gift-outline"></ion-icon>
+                </div>
+                <div class="text">Rewards<br>
+                    <div class="subtext">View your rewards & unlock new ones</div>
+                </div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+            <a href="#">
+                <div class="lefticon">
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
+                <div class="text">BookASmile</div>
+                <div class="righticon">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+            </a>
+
+        </nav>
+        <!-- End sidebar -->
+
+        <!-- Dark overlay -->
+        <div class="overlay"></div>
+
+        <!-- Content -->
+        <div class="content">
+
+            <nav class="navbar">
+                <img src="img/logo.png" class="brand-logo" alt="" />
+                <div class='input'>
+                    <ion-icon name="search"></ion-icon>
+                    <input className='search'
+                        placeholder='Search for Movies, Events, Plays, Sports, and Activities'></input>
+                </div>
+                <div class="right-container">
+                    <a class="location" onclick="openpopup()" id="result">City<div class="result" id="result"></div><ion-icon name="caret-down-sharp"></ion-icon></a>
+                    <div class="popup" id="popup">
+                        <div class="bwc__sc-1ihur1g-5 gznHHe in-animation" opacity="1">
+                            <div direction="column" class="bwc__sc-m1rlyj-3 bwc__sc-ttnkwg-27 kwGtup">
+                                <div class="bwc__sc-1iyhybo-7 bsBlaz">
+                                    <div class="bwc__sc-1iyhybo-3 iBqFrP">
+                                        <div class="bwc__sc-m1rlyj-3 bwc__sc-1iyhybo-4 aREc">
+                                            <div class="bwc__sc-m1rlyj-3 bwc__sc-1iyhybo-5 kyELKl">
+                                                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                    <title>Search</title>
+                                                    <path d="M11.8 10.864L8.859 7.918a4.912 4.912 0 0 0-.444-6.47A4.888 4.888 0 0 0 4.928 0a4.888 4.888 0 0 0-3.485 1.449 4.942 4.942 0 0 0 0 6.979 4.888 4.888 0 0 0 3.485 1.449c1.052 0 2.105-.33 2.976-1.005l2.96 2.93a.658.658 0 0 0 .476.198.686.686 0 0 0 .477-.198.672.672 0 0 0-.016-.938zm-6.855-2.32c-.97 0-1.858-.38-2.549-1.054C1 6.09 1 3.802 2.396 2.387a3.578 3.578 0 0 1 2.549-1.054c.97 0 1.858.379 2.548 1.054s1.052 1.58 1.052 2.551c0 .971-.378 1.86-1.052 2.552a3.539 3.539 0 0 1-2.548 1.053z" fill="#777"></path>
+                                                </svg>
+                                            </div>
+                                            <input type="text" autocomplete="off" placeholder="Search for your city" class="bwc__sc-1iyhybo-6 ilhhay" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bwc__sc-ttnkwg-33 kCsyEE">
+                                    <div class="bwc__sc-ttnkwg-32 jPZklB">
+                                        <div class="bwc__sc-ttnkwg-29 iNgDWn">
+                                            <svg width="18" height="18" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.65 1.5C11.65 1.08579 11.3142 0.75 10.9 0.75C10.4858 0.75 10.15 1.08579 10.15 1.5V3.68832C6.7449 4.03827 4.03831 6.74487 3.68835 10.15H1.5C1.08579 10.15 0.75 10.4858 0.75 10.9C0.75 11.3142 1.08579 11.65 1.5 11.65H3.68835C4.03831 15.0551 6.7449 17.7617 10.15 18.1117V20.5C10.15 20.9142 10.4858 21.25 10.9 21.25C11.3142 21.25 11.65 20.9142 11.65 20.5V18.1117C15.0551 17.7617 17.7617 15.0551 18.1117 11.65H20.5C20.9142 11.65 21.25 11.3142 21.25 10.9C21.25 10.4858 20.9142 10.15 20.5 10.15H18.1117C17.7617 6.74487 15.0551 4.03827 11.65 3.68832V1.5ZM5.15002 10.9C5.15002 7.72436 7.72439 5.14999 10.9 5.14999C14.0757 5.14999 16.65 7.72436 16.65 10.9C16.65 14.0756 14.0757 16.65 10.9 16.65C7.72439 16.65 5.15002 14.0756 5.15002 10.9ZM8.45001 10.9C8.45001 9.5469 9.54691 8.45 10.9 8.45C12.2531 8.45 13.35 9.5469 13.35 10.9C13.35 12.2531 12.2531 13.35 10.9 13.35C9.54691 13.35 8.45001 12.2531 8.45001 10.9ZM10.9 6.95C8.71849 6.95 6.95001 8.71847 6.95001 10.9C6.95001 13.0815 8.71849 14.85 10.9 14.85C13.0815 14.85 14.85 13.0815 14.85 10.9C14.85 8.71847 13.0815 6.95 10.9 6.95Z" fill="#DC3558"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="bwc__sc-ttnkwg-30 xhSOv">Detect my location</div>
+                                    </div>
+                                </div>
+                                <div class="bwc__sc-ttnkwg-4 Ettpg">
+                                    <span class="bwc__sc-ttnkwg-5 eGoIVD">Popular Cities</span>
+                                    <ul id="city-list" class="bwc__sc-ttnkwg-15 gZrltM" onclick="closepopup()">
+                                        <li class="bwc__sc-ttnkwg-18 KUowN">
+                                            <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                    <img src="//in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" alt="MUMBAI" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                </div>
+                                                <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Mumbai">Mumbai</span>
+                                            </div>
+                                        </li>
+                                        <li class="bwc__sc-ttnkwg-18 KUowN">
+                                            <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                    <img src="//in.bmscdn.com/m6/images/common-modules/regions/ncr.png" alt="NCR" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                </div>
+                                                <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Delhi-NCR">Delhi-NCR</span>
+                                            </div>
+                                        </li>
+                                        <li class="bwc__sc-ttnkwg-18 KUowN">
+                                            <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                    <img src="//in.bmscdn.com/m6/images/common-modules/regions/bang.png" alt="BANG" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Bengaluru">Bengaluru</span>
+                                            </div>
+                                        </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/hyd.png" alt="HYD" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Hyderabad">Hyderabad</span>
+                                                </div>
+                                            </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/ahd.png" alt="AHD" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Ahmedabad">Ahmedabad</span>
+                                                </div>
+                                            </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/chd.png" alt="CHD" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Chandigarh">Chandigarh</span>
+                                                </div>
+                                            </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/pune.png" alt="PUNE" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Pune">Pune</span>
+                                                </div>
+                                            </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/chen.png" alt="CHEN" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Chennai">Chennai</span>
+                                                </div>
+                                            </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/kolk.png" alt="KOLK" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Kolkata">Kolkata</span>
+                                                </div>
+                                            </li>
+                                            <li class="bwc__sc-ttnkwg-18 KUowN">
+                                                <div class="bwc__sc-ttnkwg-19 hkqhSR">
+                                                    <div class="bwc__sc-ttnkwg-17 gvzyfS">
+                                                        <img src="//in.bmscdn.com/m6/images/common-modules/regions/koch.png" alt="KOCH" class="bwc__sc-ttnkwg-26 izPSOY">
+                                                    </div>
+                                                    <span class="bwc__sc-ttnkwg-16 dizuyr" data-city="Kochi">Kochi</span>
+                                                </div>
+                                            </li>
+                                        
+                                        </ul>
+
+
+
+  <script>
+    // Get references to the city list and result elements
+    const cityList = document.getElementById("city-list");
+    const resultDiv = document.getElementById("result");
+
+    // Add a click event listener to the entire list
+    cityList.addEventListener("click", (event) => {
+      // Check if the clicked element is a list item
+      if (event.target.tagName === "SPAN") {
+        const selectedCity = event.target.dataset.city; // Get the city name from data attribute
+        resultDiv.textContent = ` ${selectedCity}`;
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="bwc__sc-ttnkwg-4 Ettpg">
+                                        <span cursor="pointer" color="#DC3558" class="bwc__sc-ttnkwg-5 jhbnqL">View All Cities</span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <button class="signin"
+                        onclick="document.getElementById('id01').style.display='block'">Signin</button>
+
+                    <div id="id01" class="modal">
+
+                        <div class="modal-content">
+                            <div class="getstart">
+                                <h3>Get Started</h3>
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </span>
+                            </div>
+
+                            <div class="container">
+                                <a href="#" class="button">
+                                    <div class="logo">
+                                        <img src="img/googlelogo.svg">
+                                    </div>
+                                    <div class="text">Continue with Google</div>
+                                </a>
+                                <a href="#" class="button">
+                                    <div class="logo">
+                                        <ion-icon name="mail-outline" style="font-size: 22px;"></ion-icon>
+                                    </div>
+                                    <div class="text">Continue with Email</div>
+                                </a>
+                                <a href="#" class="button">
+                                    <div class="logo">
+                                        <ion-icon name="logo-apple" style="font-size: 22px;"></ion-icon>
+                                    </div>
+                                    <div class="text">Continue with Apple</div>
+                                </a>
+                            </div>
+                            <h2>OR</h2>
+
+                            <div class="phone">
+                                <img alt="indian flag" src="img/indianflag.svg">
+                                <div class="code">+91</div>
+                                <input id="mobileNo" type="tel" pattern="[0-9]*"
+                                    placeholder="Continue with mobile number" class="mobileNo">
+                            </div>
+
+                            <p>I agree to the <u>Terms & Conditions</u>&<u>Privacy Policy</u></p>
+
+                        </div>
+
+                    </div>
+
+                    <a href="#" class="btn-customized open-menu">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </a>
+                </div>
+            </nav>
+
+            <nav class="subnavbar">
+                <ul class='navitem'>
+                    <li><a href='#Movies'>Movies</a></li>
+                    <li><a href='#Movies'>Stream<span>NEW</span></a></li>
+                    <li><a href='#Movies'>Events</a></li>
+                    <li><a href='#Movies'>Plays</a></li>
+                    <li><a href='#Movies'>Sports</a></li>
+                    <li><a href='#Movies'>Activities</a></li>
+                    <li><a href='#Movies'>Buzz</a></li>
+                </ul>
+                <ul class='navitem1'>
+                    <li><a href='#Movies'>ListYourShow<span>NEW</span></a></li>
+                    <li><a href='#Movies'>Corporates</a></li>
+                    <li><a href='#Movies'>Offers</a></li>
+                    <li><a href='#Movies'>Gift Cards</a></li>
+                </ul>
+            </nav>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- <div class="slider">
+                    <img src="img/banner/banner1.webp" alt="">
+                </div> -->
+                </div>
+            </div>
+
+            <script src="js/data.js"></script>
+            <script src="js/app.js"></script>
+
+            <h1 class="title">Recommended Movies</h1>
+            <div class="movies-list">
+                <div class="card-container">
+
+                    <div class="movie" >
+                        <a href="./inside.html">
+                            <div class="card">
+                                <img src="img/poster/poster1.jpg" class="card-img" alt="">
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p>93% &ThinSpace; 928 votes</p>
+                                </div>
+                            </div>
+                            <h3>Theerppu</h3>
+                            <p class="detail">Drama/Thriller</p>
+                        </a>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster2.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>92% &ThinSpace; 16k votes</p>
+                            </div>
+                        </div>
+                        <h3>Thallumaala</h3>
+                        <p class="detail">Action/Comedey</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster3.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>94% &ThinSpace; 14k votes</p>
+                            </div>
+                        </div>
+                        <h3>Nna Thaan Case Kodu</h3>
+                        <p class="detail">Comedy/Drama</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster4.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>59% &ThinSpace; 74k votes</p>
+                            </div>
+                        </div>
+                        <h3>Liger</h3>
+                        <p class="detail">Action/Drama/Romantic</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster5.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>87% &ThinSpace; 34k votes</p>
+                            </div>
+                        </div>
+                        <h3>Thiruchitrambalam</h3>
+                        <p class="detail">Comedy/Drama/Musical</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster6.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>92% &ThinSpace; 120k votes</p>
+                            </div>
+                        </div>
+                        <h3>Sita Ramam</h3>
+                        <p class="detail">Action/Drama/Romantic</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster7.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="thumbs-up-sharp" style="color: green;"></ion-icon>
+                                <p>3k likes</p>
+                            </div>
+                        </div>
+                        <h3>Kudukka 2025</h3>
+                        <p class="detail">Drama/Thriller</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster8.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>84% &ThinSpace; 226 votes</p>
+                            </div>
+                        </div>
+                        <h3>Peace</h3>
+                        <p class="detail">Comedy/Drama/Thriller</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="img/poster/poster9.jpg" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="thumbs-up-sharp" style="color: green;"></ion-icon>
+                                <p>111 likes</p>
+                            </div>
+                        </div>
+                        <h3>Beyond The 7 Seas</h3>
+                        <p class="detail">Drama/Fantasy/Thriller</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="strip">
+                <img src="img/strip.webp" style="height:105px;" alt="">
+            </div>
+
+            <h1 class="title-enter">The Best of Entertainment</h1>
+            <div class="enter-list">
+                <div class="enter-container">
+
+                    <div class="card">
+                        <img src="img/enter/enter1.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter2.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter3.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter4.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter5.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter6.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter7.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter8.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter9.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter10.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter11.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter12.webp" class="card-img" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End content -->
+
+    </div>
+    <!-- End wrapper -->
+     <script>
+        let popup = document.getElementById('popup');
+
+        function openpopup() {
+            popup.classList.add('open-popup');
+        }
+        function closepopup() {
+            popup.classList.remove('open-popup');
+        }
+     </script>
+
+<body>
+    <Footer>
+        <div class="main-div">
+            <div class="div-1">
+                <div class="bwc__sc-au4qa5-44 bzTJkU">
+                    <div class="bwc__sc-m1rlyj-3 bwc__sc-au4qa5-45 iUglyZ">
+                        <div class="bwc__sc-au4qa5-46 fDqlDq">
+                            <img alt="hut" src="//in.bmscdn.com/webin/common/icons/hut.svg" class="bwc__sc-au4qa5-50 gipVVh">
+                        </div>
+                        <div class="bwc__sc-au4qa5-47 jwUOBP">List your Show</div>
+                        <div class="bwc__sc-au4qa5-48 jNUTAs">Got a show, event, activity or a great experience? Partner with us &amp; get listed on BookMyShow</div>
+                        <a href="/list-your-show" class="bwc__sc-au4qa5-49 ctrgkd">Contact today!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="div-2">
+               gggggggggggggggggg
+            </div>
+            <div class="div-3">
+                <div wrap="wrap" class="bwc__sc-1iuy4bj-0 bwc__sc-au4qa5-1 jnnqYA">
+                    <div wrap="wrap" class="bwc__sc-1iuy4bj-0 bwc__sc-au4qa5-2 gatsMW">
+                        <div class="bwc__sc-1jgpgcm-1 eFQjTJ"><div class="bwc__sc-1jgpgcm-2 MlBJi">
+                    Movies Now Showing in Nagpur</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/movies/vicky-vidya-ka-woh-wala-video/ET00395211" class="bwc__sc-1jgpgcm-4 jgzpRM">Vicky Vidya ka Woh Wala Video</a>
+                        <span class="vl"></span>
+                        <a href="/movies/jigra/ET00370844" class="bwc__sc-1jgpgcm-4 jgzpRM">Jigra</a>
+                        <span class="vl"></span>
+                        <a href="/movies/vettaiyan-the-hunter-hindi/ET00412744" class="bwc__sc-1jgpgcm-4 jgzpRM">Vettaiyan - The Hunter</a>
+                        <span class="vl"></span>
+                        <a href="/movies/phullwanti/ET00407816" class="bwc__sc-1jgpgcm-4 jgzpRM">Phullwanti</a>
+                        <span class="vl"></span>
+                        <a href="/movies/yek-number/ET00412547" class="bwc__sc-1jgpgcm-4 jgzpRM">Yek Number</a>
+                        <span class="vl"></span>
+                        <a href="/movies/martin-hindi/ET00328835" class="bwc__sc-1jgpgcm-4 jgzpRM">Martin</a>
+                        <span class="vl"></span>
+                        <a href="/movies/devara-part-1-hindi/ET00403140" class="bwc__sc-1jgpgcm-4 jgzpRM">Devara - Part 1</a>
+                        <span class="vl"></span>
+                        <a href="/movies/stree-2-sarkate-ka-aatank/ET00364249" class="bwc__sc-1jgpgcm-4 jgzpRM">Stree 2: Sarkate Ka Aatank</a>
+                        <span class="vl"></span>
+                        <a href="/movies/vettaiyan/ET00379391" class="bwc__sc-1jgpgcm-4 jgzpRM">Vettaiyan</a>
+                        <span class="vl"></span>
+                        <a href="/movies/navra-maza-navsacha-2/ET00406886" class="bwc__sc-1jgpgcm-4 jgzpRM">Navra Maza Navsacha 2</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Upcoming Movies in Nagpur</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/movies/bougainvillea/ET00413069" class="bwc__sc-1jgpgcm-4 jgzpRM">Bougainvillea</a>
+                        <span class="vl"></span>
+                        <a href="/movies/raja-rani-marathi/ET00404607" class="bwc__sc-1jgpgcm-4 jgzpRM">Raja Rani (Marathi)</a>
+                        <span class="vl"></span>
+                        <a href="/movies/joy-hanu-man/ET00410754" class="bwc__sc-1jgpgcm-4 jgzpRM">Joy Hanu Man</a>
+                        <span class="vl"></span>
+                        <a href="/movies/veekshanam/ET00415017" class="bwc__sc-1jgpgcm-4 jgzpRM">Veekshanam</a>
+                        <span class="vl"></span>
+                        <a href="/movies/the-deal/ET00415381" class="bwc__sc-1jgpgcm-4 jgzpRM">The Deal</a>
+                        <span class="vl"></span>
+                        <a href="/movies/like-aani-subscribe/ET00406304" class="bwc__sc-1jgpgcm-4 jgzpRM">Like Aani Subscribe</a>
+                        <span class="vl"></span>
+                        <a href="/movies/dhaka-escape/ET00415193" class="bwc__sc-1jgpgcm-4 jgzpRM">Dhaka Escape</a>
+                        <span class="vl"></span>
+                        <a href="/movies/paani/ET00075762" class="bwc__sc-1jgpgcm-4 jgzpRM">Paani</a>
+                        <span class="vl"></span>
+                        <a href="/movies/porattu-nadakam/ET00415850" class="bwc__sc-1jgpgcm-4 jgzpRM">Porattu Nadakam</a>
+                        <span class="vl"></span>
+                        <a href="/movies/balifool-welcome-to-bastar/ET00415910" class="bwc__sc-1jgpgcm-4 jgzpRM">Balifool Welcome to Bastar</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Movies By Genre</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/explore/drama-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Drama Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/action-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Action Movies</a><a href="/explore/thriller-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Thriller Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/comedy-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Comedy Movies</a><a href="/explore/period-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Period Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/Screening-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Screening Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/noir-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Noir Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/mythological-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Mythological Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/tragedy-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Tragedy Movies</a>
+                        <span class="vl"></span>
+                        <a href="/explore/fantasy-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Fantasy Movies</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Movies By Language</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/explore/hindi-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Hindi</a>
+                        <span class="vl"></span>
+                        <a href="/explore/marathi-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Marathi</a>
+                        <span class="vl"></span>
+                        <a href="/explore/chattisgarhi-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Chattisgarhi</a>
+                        <span class="vl"></span>
+                        <a href="/explore/portuguese-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Portuguese</a>
+                        <span class="vl"></span>
+                        <a href="/explore/bengali-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Bengali</a>
+                        <span class="vl"></span>
+                        <a href="/explore/bhojpuri-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Bhojpuri</a>
+                        <span class="vl"></span>
+                        <a href="/explore/english-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in English</a>
+                        <span class="vl"></span>
+                        <a href="/explore/sindhi-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Sindhi</a>
+                        <span class="vl"></span>
+                        <a href="/explore/english-7d-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in English 7D</a>
+                        <span class="vl"></span>
+                        <a href="/explore/tamil-movies-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Movies in Tamil</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Sports Events in Nagpur</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/explore/kabaddi-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Kabaddi</a>
+                        <span class="vl"></span>
+                        <a href="/explore/running-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Running</a>
+                        <span class="vl"></span>
+                        <a href="/explore/football-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Football</a>
+                        <span class="vl"></span>
+                        <a href="/explore/athletics-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Athletics</a>
+                        <span class="vl"></span>
+                        <a href="/explore/motorsports-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Motorsports</a>
+                        <span class="vl"></span>
+                        <a href="/explore/card-games-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Card Games</a>
+                        <span class="vl"></span>
+                        <a href="/explore/hockey-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Hockey</a>
+                        <span class="vl"></span>
+                        <a href="/explore/rugby-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Rugby</a>
+                        <span class="vl"></span>
+                        <a href="/explore/badminton-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Badminton</a>
+                        <span class="vl"></span>
+                        <a href="/explore/boxing-nagpur" class="bwc__sc-1jgpgcm-4 jgzpRM">Boxing</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Events in Top Cities</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/explore/events-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Mumbai</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Delhi-NCR</a>
+                        <a href="/explore/events-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Chennai</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Bengaluru</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Hyderabad</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Pune</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Ahmedabad</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Kolkata</a>
+                        <span class="vl"></span>
+                        <a href="/explore/events-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Events in Kochi</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Cinemas in Top Cities</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/mumbai/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Mumbai</a>
+                        <span class="vl"></span>
+                        <a href="/national-capital-region-ncr/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Delhi-NCR</a>
+                        <span class="vl"></span>
+                        <a href="/chennai/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Chennai</a>
+                        <span class="vl"></span>
+                        <a href="/bengaluru/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Bengaluru</a>
+                        <span class="vl"></span>
+                        <a href="/hyderabad/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Hyderabad</a>
+                        <span class="vl"></span>
+                        <a href="/pune/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Pune</a>
+                        <span class="vl"></span>
+                        <a href="/ahmedabad/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Ahmedabad</a>
+                        <span class="vl"></span>
+                        <a href="/kolkata/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Kolkata</a>
+                        <span class="vl"></span>
+                        <a href="/kochi/cinemas" class="bwc__sc-1jgpgcm-4 jgzpRM">Cinemas in Kochi</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Plays in Top Cities</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/explore/plays-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Mumbai</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Delhi-NCR</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Chennai</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Bengaluru</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Hyderabad</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Pune</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Ahmedabad</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Kolkata</a>
+                        <span class="vl"></span>
+                        <a href="/explore/plays-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Plays in Kochi</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Activities in Top Cities</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/explore/activities-mumbai" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Mumbai</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-national-capital-region-ncr" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Delhi-NCR</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-chennai" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Chennai</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-bengaluru" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Bengaluru</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-hyderabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Hyderabad</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-pune" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Pune</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-ahmedabad" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Ahmedabad</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-kolkata" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Kolkata</a>
+                        <span class="vl"></span>
+                        <a href="/explore/activities-kochi" class="bwc__sc-1jgpgcm-4 jgzpRM">Activities in Kochi</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">Movies Now Showing</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/movies/vicky-vidya-ka-woh-wala-video/ET00395211" class="bwc__sc-1jgpgcm-4 jgzpRM">Vicky Vidya ka Woh Wala Video</a>
+                        <span class="vl"></span>
+                        <a href="/movies/jigra/ET00370844" class="bwc__sc-1jgpgcm-4 jgzpRM">Jigra</a>
+                        <span class="vl"></span>
+                        <a href="/movies/vettaiyan/ET00379391" class="bwc__sc-1jgpgcm-4 jgzpRM">Vettaiyan</a>
+                        <span class="vl"></span>
+                        <a href="/movies/martin-telugu/ET00328828" class="bwc__sc-1jgpgcm-4 jgzpRM">Martin</a>
+                        <span class="vl"></span>
+                        <a href="/movies/vettaiyan-the-hunter-kannada/ET00412745" class="bwc__sc-1jgpgcm-4 jgzpRM">Vettaiyan - The Hunter</a>
+                        <span class="vl"></span>
+                        <a href="/movies/devara-part-1/ET00310216" class="bwc__sc-1jgpgcm-4 jgzpRM">Devara - Part 1</a>
+                        <span class="vl"></span>
+                        <a href="/movies/yek-number/ET00412547" class="bwc__sc-1jgpgcm-4 jgzpRM">Yek Number</a>
+                        <span class="vl"></span>
+                        <a href="/movies/bohurupi/ET00407201" class="bwc__sc-1jgpgcm-4 jgzpRM">Bohurupi</a>
+                        <span class="vl"></span>
+                        <a href="/movies/viswam/ET00394800" class="bwc__sc-1jgpgcm-4 jgzpRM">Viswam</a>
+                        <span class="vl"></span>
+                        <a href="/movies/the-house-of-dead-horror-combo-7d/ET00021990" class="bwc__sc-1jgpgcm-4 jgzpRM">The House of Dead Horror</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">COUNTRIES</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="https://id.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Indonesia</a>
+                        <span class="vl"></span>
+                        <a href="https://sg.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Singapore</a>
+                        <span class="vl"></span>
+                        <a href="https://ae.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">UAE</a>
+                        <span class="vl"></span>
+                        <a href="https://lk.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Sri Lanka</a>
+                        <span class="vl"></span>
+                        <a href="https://wi.bookmyshow.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">West Indies</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">HELP</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="/aboutus" class="bwc__sc-1jgpgcm-4 jgzpRM">About Us</a>
+                        <span class="vl"></span>
+                        <a href="/contactus" class="bwc__sc-1jgpgcm-4 jgzpRM">Contact Us</a>
+                        <span class="vl"></span>
+                        <a href="/careers/" class="bwc__sc-1jgpgcm-4 jgzpRM">Current Opening</a>
+                        <span class="vl"></span>
+                        <a href="/press-release" class="bwc__sc-1jgpgcm-4 jgzpRM">Press Release</a>
+                        <span class="vl"></span>
+                        <a href="/press-coverage" class="bwc__sc-1jgpgcm-4 jgzpRM">Press Coverage</a>
+                        <span class="vl"></span>
+                        <a href="/static/sitemap" class="bwc__sc-1jgpgcm-4 jgzpRM">Sitemap</a>
+                        <span class="vl"></span>
+                        <a href="/faq" class="bwc__sc-1jgpgcm-4 jgzpRM">FAQs</a>
+                        <span class="vl"></span>
+                        <a href="/terms-and-conditions" class="bwc__sc-1jgpgcm-4 jgzpRM">Terms and Conditions</a>
+                        <span class="vl"></span>
+                        <a href="/privacy" class="bwc__sc-1jgpgcm-4 jgzpRM">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="bwc__sc-1jgpgcm-1 eFQjTJ">
+                    <div class="bwc__sc-1jgpgcm-2 MlBJi">BOOKMYSHOW EXCLUSIVES</div>
+                    <div class="bwc__sc-1jgpgcm-3 dVivmv">
+                        <a href="https://lollaindia.com/" class="bwc__sc-1jgpgcm-4 jgzpRM">Lollapalooza India</a>
+                        <a href="/superstar" class="bwc__sc-1jgpgcm-4 jgzpRM">Superstar</a>
+                        <span class="vl"></span>
+                        <a href="/donation" class="bwc__sc-1jgpgcm-4 jgzpRM">BookAChange</a>
+                        <span class="vl"></span>
+                        <a href="/voucher" class="bwc__sc-1jgpgcm-4 jgzpRM">Corporate Vouchers</a>
+                        <span class="vl"></span>
+                        <a href="/giftcards" class="bwc__sc-1jgpgcm-4 jgzpRM">Gift Cards</a>
+                        <span class="vl"></span>
+                        <a href="/s/list-your-show/" class="bwc__sc-1jgpgcm-4 jgzpRM">List My Show</a>
+                        <span class="vl"></span>
+                        <a href="/offers" class="bwc__sc-1jgpgcm-4 jgzpRM">Offers</a>
+                        <span class="vl"></span>
+                        <a href="/explore/c/stream" class="bwc__sc-1jgpgcm-4 jgzpRM">Stream</a>
+                        <span class="vl"></span>
+                        <a href="/trailers" class="bwc__sc-1jgpgcm-4 jgzpRM">Trailers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bwc__sc-au4qa5-26 vhhdw">
+            <div direction="column" class="bwc__sc-1iuy4bj-2 bwc__sc-au4qa5-33 eprSnC"><div class="bwc__sc-au4qa5-39 iaUPsu">
+                <div class="bwc__sc-au4qa5-40 igiRIk"></div>
+                <a href="/" class="bwc__sc-au4qa5-41 LFerV">
+                    <img alt="bookmyshow" src="./img/logo.svg">
+                </a>
+                <div class="bwc__sc-au4qa5-40 igiRIk"></div>
+            </div>
+            <div class="bwc__sc-au4qa5-27 eOLamZ">Copyright 2024 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.<br>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</div>
+        
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </Footer>
+
+</body>
+
+</html>
